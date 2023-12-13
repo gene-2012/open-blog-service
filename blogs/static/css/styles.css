@@ -1,0 +1,30 @@
+a{
+  color:lightseagreen;
+  text-decoration:none;
+}
+a:visited{
+  color:lightseagreen;
+}
+a:hover{
+  color:darkgreen;
+  font-weight:blod;
+}
+.base_line{
+  border: 1px solid lightseagreen;
+  background-color:lightblue;
+}
+.user_header{
+  margin:auto;
+  text-align: center;
+}
+.user_avatar:hover{
+  width:150px; 
+  height:150px;
+  border-radius:100%;
+}
+.user_avatar{
+  width:88px; 
+  height:88px;
+  border-radius:100%;
+}
+

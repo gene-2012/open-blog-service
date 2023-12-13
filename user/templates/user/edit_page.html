@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+{% extends 'blogs/base.html' %}
+{% block content %}
+<title> Edit Settings - Gene's Blog </title>
+<p>Edit your home page with simpel Markdown!</p>
+
+<form action="{% url 'user:edit_page' page.id%}" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    <p>username:{{ form.username }}</p>
+    <p>homepage:{{ form.page }}</p>
+    {#{ form.avatar }#}
+    <button name="submit">Save</button>
+</form>
+{% endblock content %}

@@ -1,0 +1,10 @@
+{% extends "user/user_base.html" %}
+{% block details %}
+    {% if page_user == user or user.is_superuser %}
+        <a href="{% url 'user:edit_page' page_user.id %}">[-] Edit</a>
+    {% endif %}
+    <hr />
+    <div>
+        <p>{{profile}}</p>
+    </div>
+{% endblock details %}

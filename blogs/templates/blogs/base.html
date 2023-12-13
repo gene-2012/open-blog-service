@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<html>
+<link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+<style>
+    img:hover[alt*="avatar"]{
+        width: 132px;
+        height: 132px;
+        border-radius: 100%;
+    }
+    img:hover {
+        max-width: 500px;
+        max-height: 500px;
+        width: 103%;
+        height: 103%;
+        border-radius: 0px;
+    }
+    img{
+        max-width: 400px;
+        max-height: 400px;
+    }
+    code{
+        border-radius: 4px;
+        padding: 2px 4px;
+        background-color: #f7f7f7;
+        width:max-long;
+        height:max-content;
+    }
+</style>
+<body>
+    <header>
+        <a href="{% url 'blogs:index' %}">
+            <h1>Blogs</h1>
+        </a>
+    </header>
+    <nav>
+        <table>
+            <tr>
+                {% if user.is_authenticated %}
+                    <td>Hello <a href="{% url 'user:my_home' %}"> {{user.username}} </a>!</td>
+                    <td><a href="{% url 'accounts:logout' %}">log out</a></td>
+                {% else %}
+                    <td><a href="{% url 'accounts:login' %}">log in</a></td>
+                    <td><a href="{% url 'accounts:register' %}">register</a></td>
+                {% endif %}
+                {% if user.is_superuser %}
+                    <td><a href="{% url 'admin:index' %}">admin</a></td>
+                {% endif %}
+            </tr>
+        </table>
+    </nav>
+    <hr class="base_line" size="10" noshade="noshade" />
+    <main>
+        {% block content %}
+        {% endblock content %}
+    </main>
+
+    <footer>
+        <hr class="base_line" size="10" noshade="noshade" />
+        &copy; 2023 Geneluo Happy Day!
+    </footer>
+</body>
+</html>

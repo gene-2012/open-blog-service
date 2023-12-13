@@ -1,0 +1,13 @@
+{% extends "blogs/base.html" %}
+{% block content %}
+    <title> {{title}} - Gene's Blog</title>
+    <div id="info">
+        <h1>{{title}}</h1>
+        <p id="owner"> 
+            Owner: <a href="{% url 'user:user' blog.owner_id 'home'%}"><b>{{owner}}</b> </a>
+        </p>  
+        <p id="time">{{date_added|date:'M d, Y H:i'}}, Topic:{{topic}}<p>
+    </div>
+    <hr>
+    <p id="content">{{text|linebreaks}}</p>
+{% endblock content %}

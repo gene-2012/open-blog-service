@@ -1,0 +1,25 @@
+{% extends "user/user_base.html" %}
+{% block details %}
+<ul>
+  {% for blog in blogs %}
+    <li>
+      <a href="{% url 'blogs:blogs' blog.id %}">
+        <strong><p>{{blog.title}}</p></strong>
+        <p>{{blog.date_added|date:'M d, Y H:i'}}</p>
+      </a>
+        <p>{{blog.text|linebreaks}}</p>
+        <p>Topic: {{blog.topic}}</p>
+        {% if blog.owner == user or user.is_superuser %}
+          <a href="{% url 'blogs:edit_blog' blog.id %}">
+            <p>[-]Edit this blog </p>
+          </a>
+          <a href="{% url 'blogs:delete_blog' blog.id %}">
+            <p>[*]Delete this blog </p>
+          </a>
+        {% endif %}
+      </li> 
+  {% empty %}
+      <li>There is no blogs for this topic yet.</li>
+  {% endfor %}    
+</ul>
+{% endblock details %}

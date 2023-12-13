@@ -1,0 +1,14 @@
+{% extends "blogs/base.html" %}
+{% block content %}
+    <title> {{page_user.username}}'s Home Page - Gene's Blog </title>
+    <div class="user_header">
+        <img class="user_avatar" src="{{page_user.avatar.url}}" alt="avatar" title="mouse over to see the whole image">
+        <h1>{{page_user.username}}</h1>
+        <div>
+            <a href="{% url 'user:user' page_user.id 'home' %}">home</a> |
+            <a href="{% url 'user:user' page_user.id 'blogs' %}"> blogs </a>
+        </div>
+    </div>
+    <hr />
+    {% block details %}{% endblock details %}
+{% endblock content %}
