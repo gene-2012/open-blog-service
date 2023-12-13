@@ -6,7 +6,6 @@ from blogs.models import Blog
 from .forms import PageForm
 from django.utils.safestring import mark_safe
 from markdown2 import markdown
-from .check import check
 # Create your views here.
 def user_home(request, user_id):
     user = get_object_or_404(get_user_model(), id=user_id)
