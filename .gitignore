@@ -6,4 +6,4 @@ bl_env/
 .todo
 migrations/
 .vscode/
-start.bat
+run.bat
