@@ -50,8 +50,10 @@ def new_blog(request):
 def edit_blog(request, blog_id):
     blog = Blog.objects.get(id=blog_id)
     topic = blog.topic
-    if blog.owner != request.user and request.user.is_superuser == False:
-        raise Http404
+    user = blog.owner
+    permission = request.user.is_superuser or request.user == user
+    if not permission:
+        return HttpResponseForbidden()
     if request.method != 'POST':
         form = BlogForm(instance=blog)
     else:
@@ -67,7 +69,9 @@ def edit_blog(request, blog_id):
 @login_required
 def delete_blog(request, id):
     blog = get_object_or_404(Blog, id=id)
-    if blog.owner != request.user and request.user.is_superuser == False:
-        return redirect('blogs:index')
+    user = blog.owner
+    permission = request.user.is_superuser or request.user == user
+    if not permission:
+        return HttpResponseForbidden()
     blog.delete()
     return redirect('blogs:index')

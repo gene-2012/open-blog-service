@@ -6,6 +6,7 @@ from blogs.models import Blog
 from .forms import PageForm
 from django.utils.safestring import mark_safe
 from markdown2 import markdown
+from .check import check
 # Create your views here.
 def user_home(request, user_id):
     user = get_object_or_404(get_user_model(), id=user_id)
@@ -30,8 +31,9 @@ def my_home(request):
 @login_required
 def edit_page(request, id):
     user = get_user_model().objects.get(id=id)
-    if request.user != user and request.user.is_superuser == False:
-        return redirect(f'/user/{id}/home')
+    permission = request.user.is_superuser or request.user == user
+    if not permission:
+        return HttpResponseForbidden()
     if request.method != 'POST':
         form = PageForm(instance=user)
     else:
