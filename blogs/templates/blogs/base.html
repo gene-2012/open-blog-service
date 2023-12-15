@@ -18,6 +18,13 @@
         height: 103%;
         border-radius: 0px;
     }
+    img[alt^="small_avatar"]{
+        width: 20px;
+        height: 20px;
+        border-radius: 100%;
+        max-width: 20px;
+        max-height: 20px;
+    }
     img{
         max-width: 400px;
         max-height: 400px;
@@ -27,7 +34,62 @@
         padding: 2px 4px;
         background-color: #f7f7f7;
     }
+    header{
+        padding: 10px 10px;
+        background-color: #FFF;
+    }
+    button{
+        background-color: #CCC;
+        color: #1D1D1F;
+        border: none;
+        padding: 5px 10px;
+        cursor: pointer;
+        font-size: 16px;
+        weight: bold;
+        border-radius: 50px;
+    }
+    button:hover{
+        background-color: #111111;
+        color: #F5F5F7;
+    }
+    input, textarea{
+        background-color: #F5F5F7;
+        color: #1D1D1F;
+        border: 1px solid #CCC;
+        padding: 5px 10px;
+        weight: bold;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+    select{
+        background-color: #F5F5F7;
+        color: #1D1D1F;
+        border: 1px solid #CCC;
+        padding: 5px 5px;
+        weight: bold;
+        font-size: 16px;
+        border-radius: 10px;
+    }
+    input:hover, textarea:hover{
+        background-color: #E5E5E7;
+        color: #222222;
+    }
+    td{
+        padding: 5px 10px;
+    }
+    nav{
+        align: right;
+        padding: 0px 10px;
+    }
 </style>
+    <script>
+        function jump() {
+            var url = document.getElementById('id').value;
+            if (url !== ""){
+                window.location.href = "/problem/" + url + "/";
+            }
+        }
+    </script>
 <body>
     <header>
         <a href="{% url 'blogs:index' %}">
@@ -37,15 +99,15 @@
     <nav>
         <table>
             <tr>
-                {% if user.is_authenticated %}
-                    <td>Hello <a href="{% url 'user:my_home' %}"> {{user.username}} </a>!</td>
-                    <td><a href="{% url 'accounts:logout' %}">log out</a></td>
-                {% else %}
-                    <td><a href="{% url 'accounts:login' %}">log in</a></td>
-                    <td><a href="{% url 'accounts:register' %}">register</a></td>
-                {% endif %}
                 {% if user.is_superuser %}
                     <td><a href="{% url 'admin:index' %}">admin</a></td>
+                {% endif %}
+                {% if user.is_authenticated %}
+                    <td><a href="{% url 'accounts:logout' %}">log out</a></td>
+                    <td><a href="{% url 'user:my_home' %}"> <img src="{{user.avatar.url}}" alt="small_avatar" /> {{user.username}}</a></td>
+                {% else %}
+                    <td><a href="{% url 'accounts:login' %}">log in</a></td>
+                    {#<td><a href="{% url 'accounts:register' %}">register</a></td>#}
                 {% endif %}
             </tr>
         </table>
