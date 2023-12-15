@@ -1,11 +1,8 @@
 from django.shortcuts import render,redirect,get_object_or_404
 from .models import Blog
 from .forms import BlogForm
-from django.views.decorators.csrf import csrf_exempt
 from django.contrib.auth.decorators import login_required
-from django.http import Http404, HttpResponse
-from markdown2 import markdown
-from django.utils.safestring import mark_safe
+from django.http import Http404, HttpResponse, HttpResponseForbidden
 # Create your views here.
 
 def index(request):
@@ -20,13 +17,16 @@ def index(request):
     return render(request, 'blogs/index.html', context)
 
 def blogs(request, blog_id):
+    """
+    .TODO : use remark.js to render markdown
+    """
     blog = get_object_or_404(Blog, id=blog_id)
     context = {
                'blog' : blog, 
                'title' : blog.title, 
                'owner' : blog.owner, 
                'date_added' : blog.date_added, 
-               'text' : mark_safe(markdown(blog.text)), 
+               'text' : blog.text, 
                'topic' : blog.topic
                }
     return render(request, 'blogs/blogs.html', context)

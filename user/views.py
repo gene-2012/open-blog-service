@@ -4,12 +4,15 @@ from django.contrib.auth.decorators import login_required
 from django.db.models import Q
 from blogs.models import Blog
 from .forms import PageForm
-from django.utils.safestring import mark_safe
-from markdown2 import markdown
+#from markdown2 import markdown
+from django.http import HttpResponseForbidden
 # Create your views here.
 def user_home(request, user_id):
+    """
+    .TODO : add markdown viewer
+    """
     user = get_object_or_404(get_user_model(), id=user_id)
-    context = {'page_user' : user, 'profile' : mark_safe(markdown(user.page))}
+    context = {'page_user' : user, 'profile' : user.page}
     return render(request, 'user/user.html', context)
 def user_blog(request, user_id):
     user = get_object_or_404(get_user_model(), id=user_id)
