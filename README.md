@@ -4,13 +4,13 @@
 
 This is a simple open-source blog system based by Django.
 
-He has several key features as follows:
+It has several key features as follows:
 
 - Simple blog display.
 
 - User-defined homepage.
 
-- Powerful backend powered by Django.
+- Powerful backend(powered by Django).
 
 ### URL Tree
 
