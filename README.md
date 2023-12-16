@@ -33,6 +33,7 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
+
 ## Introduce
 
 This is a simple open-source blog system based by Django.
