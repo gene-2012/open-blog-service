@@ -12,6 +12,21 @@ He has several key features as follows:
 
 - Powerful backend powered by Django.
 
+### URL Tree
+
+- localhost
+  - '':index
+  - 'blogs/[blog_id]/': Blog detail
+  - 'new_blog/': new blog
+  - 'edit_blog/[blog_id]/': edit blog
+  - 'delete_blog/[blog_id]/': delete blog
+  - 'user'
+    - '[user_id]/[page_id]/': user home
+    - 'edit_page/[user_id]/': edit user home
+  - 'accounts'
+    - 'login/': login
+    - 'register': register(closed)
+
 ### Picture
 
 Home page: ![Home Page](/picture/home_page.jpeg)
@@ -61,3 +76,7 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
+
+## Contact Us
+
+Email: [gene201248@126.com](mailto:gene201248@126.com)
