@@ -47,12 +47,12 @@ He has several key features as follows:
 
 ### Picture
 
-![Home Page](/picture/home_page.jpeg)
+Home page: ![Home Page](/picture/home_page.jpeg)
 
-![Blog Detail](/picture/detail.jpeg)
+Blog detail: ![Blog Detail](/picture/detail.jpeg)
 
-![Edit Blog](/picture/edit_blog.jpeg)
+Edit blog: ![Edit Blog](/picture/edit_blog.jpeg)
 
-![User Home](/picture/user_home.jpeg)
+User-defined homepage: ![User-defined homepage](/picture/user_home.jpeg)
 
-![Admin](/picture/admin_view.jpeg)
+Admin page(by Django): ![Admin](/picture/admin_view.jpeg)
