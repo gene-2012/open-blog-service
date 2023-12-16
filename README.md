@@ -20,9 +20,13 @@ Blog detail: ![Blog Detail](/picture/detail.jpeg)
 
 Edit blog: ![Edit Blog](/picture/edit_blog.jpeg)
 
-User-defined homepage: ![User-defined homepage](/picture/user_home.jpeg)
+User-defined homepage: ![User-defined Homepage](/picture/user_home.jpeg)
 
 Admin page(by Django): ![Admin](/picture/admin_view.jpeg)
+
+Add blog page: ![Add Blog](/picture/add_blog.jpeg)
+
+Login: ![Login](/picture/login.jpeg)
 
 ## How to Run This App
 
