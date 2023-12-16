@@ -14,11 +14,15 @@ pip install django
 
 ### Database And User Settings
 
+#### Database
+
 We use SQLite as the database. Run this code to initialize.
 
 ```bash
 python manage.py migrate
 ```
+
+#### User
 
 Before starting the app, please create a super user first.
 
