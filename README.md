@@ -1,7 +1,5 @@
 # OpenBlog Service
 
-A simple open-source blog system powered by Django.
-
 ## How to Run This App
 
 ### Prework
@@ -35,4 +33,19 @@ python manage.py createsuperuser
 ```bash
 python manage.py runserver
 ```
-## 
+## Introduce
+
+This is a simple open-source blog system based by Django.
+
+He has several key features as follows:
+
+- Simple blog display.
+
+- User-defined homepage.
+
+- Powerful backend powered by Django.
+
+### Blog Display Page
+
+![Home Page](/picture/home_page.jpeg)
+
