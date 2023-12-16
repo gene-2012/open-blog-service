@@ -45,7 +45,14 @@ He has several key features as follows:
 
 - Powerful backend powered by Django.
 
-### Blog Display Page
+### Picture
 
 ![Home Page](/picture/home_page.jpeg)
 
+![Blog Detail](/picture/detail.jpeg)
+
+![Edit Blog](/picture/edit_blog.jpeg)
+
+![User Home](/picture/user_home.jpeg)
+
+![Admin](/picture/admin_view.jpeg)
