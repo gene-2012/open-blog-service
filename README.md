@@ -15,17 +15,17 @@ He has several key features as follows:
 ### URL Tree
 
 - localhost
-  - ``:index
+  - `/`:index
   - `blogs/[blog_id]/`: Blog detail
   - `new_blog/`: new blog
   - `edit_blog/[blog_id]/`: edit blog
   - `delete_blog/[blog_id]/`: delete blog
-  - `user`
+  - `/user/`
     - `[user_id]/[page_id]/`: user home
     - `edit_page/[user_id]/`: edit user home
-  - `accounts`
+  - `/accounts/`
     - `login/`: login
-    - `register`: register(closed)
+    - `register/`: register(closed)
 
 ### Picture
 
