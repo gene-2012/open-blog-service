@@ -1,27 +1,34 @@
 # OpenBlog Service
 
-A simple opensource blog system powered by Django.
+A simple open-source blog system powered by Django.
 
-## How To Run This App
+## How to Run This App
 
 ### Prework
 
 ```bash
 python -m venv bl_env
-bl_env/scripts/activate -> for windows
+source bl_env/bin/activate  # for Linux
 pip install django
 ```
 
-### Database Settings
+### Database And User Settings
 
-We use Sqlite as the database. Run this code to init.
+We use SQLite as the database. Run this code to initialize.
 
 ```bash
 python manage.py migrate
 ```
 
-### Start A DEV Server
+Before starting the app, please create a super user first.
+
+```bash
+python manage.py createsuperuser
+```
+
+### Start a Development Server
 
 ```bash
 python manage.py runserver
 ```
+## 
